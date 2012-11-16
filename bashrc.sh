@@ -1,11 +1,6 @@
 # Set a default prompt of: user@host and current_directory
 # PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
 
-# Enable color support of ls
-if [ "$TERM" != "dumb" ]; then
-    eval "$(dircolors -b /etc/DIR_COLORS)"
-fi
-
 # function to run upon exit of shell
 # function _exit() {
 #     clear
@@ -29,7 +24,7 @@ complete -cf sudo
 alias cp="cp -i"
 
 # ls defaut config
-alias ls='ls --group-directories-first --time-style=+"%Y-%m-%d %H:%M" --color=auto -F' # ls par default (dossier en 1er + mise en forme de l'heure)
+alias ls='ls -F' # ls par default (dossier en 1er + mise en forme de l'heure)
 alias la='ls -a'
 alias l='ls -l'
 alias ll='l -a'
@@ -126,7 +121,7 @@ function truncate_pwd {
 PROMPT_COMMAND=truncate_pwd
 ROOT_UID=0
 
-export PS1="${txtrst}${txtgray}[\t] ${txtblue}\u${txtrst}@${txtyellow}\h${txtrst}: ${txtjaunj}\w${txtrst}\$ "
+export PS1="${txtrst}${txtblue}\u${txtrst}@${txtyellow}\h${txtrst}: ${txtjaunj}\w${txtrst}\$ "
 export PS2="        -> "
 
 
