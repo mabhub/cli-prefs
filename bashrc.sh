@@ -37,7 +37,11 @@ alias ll='l -a'
 #
 alias df='df -h'
 alias free='free -m'
-
+alias dus='du --max-depth=1 | sort -n'
+alias cls='clear'
+alias scr='screen -rdR'
+alias dns='nslookup'
+alias whois='whois -H'
 
 # Use htop instead of top (if possible)
 if type -P htop >/dev/null; then
@@ -151,6 +155,19 @@ extract () {
       *.Z)         uncompress $1;;
       *.7z)        7z x $1      ;;
       *)           echo -e "${bldred}'$1' can't be extracted width extract()" ;;
+    esac
+  else
+    echo -e "\n${bldred}'$1' is not a valid file"
+  fi
+}
+
+switch-encoding () {
+  if [ -f "$1" ] ; then
+    case "`file -bi "$1"`" in
+      *iso-8859-1)   iconv --from-code=ISO-8859-1 --to-code=UTF-8 "$1" > "$1".utf-8 && echo -e "\n${bldgrn}New file : "$1".utf-8"  ;;
+      *utf-8)   iconv --from-code=UTF-8 --to-code=ISO-8859-1 "$1" > "$1".iso-8859-1 && echo -e "\n${bldgrn}New file : "$1".iso-8859-1" ;;
+      *us-ascii)   echo -e "\n${bldylw}US-ASCII don't need to be changed"   ;;
+      *)           echo -e "\n${bldred}'$1' encoding can't be switched: changeEncoding(`file -bi "$1"`)" ;;
     esac
   else
     echo -e "\n${bldred}'$1' is not a valid file"
