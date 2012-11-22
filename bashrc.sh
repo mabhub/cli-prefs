@@ -1,18 +1,3 @@
-# Set a default prompt of: user@host and current_directory
-# PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
-
-# Enable color support of ls
-if [ "$TERM" != "dumb" ]; then
-    eval "$(dircolors -b /etc/DIR_COLORS)"
-fi
-
-# function to run upon exit of shell
-# function _exit() {
-#     clear
-# }
-# trap _exit 0
-
-
 # Shell options
 shopt -s cdspell
 shopt -s checkwinsize
