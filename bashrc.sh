@@ -158,3 +158,8 @@ switch-encoding () {
     echo -e "\n${bldred}'$1' is not a valid file"
   fi
 }
+
+if [ -f "$HOME/.cli-prefs/git-shortcuts.sh" ]; then
+  . "$HOME/.cli-prefs/git-shortcuts.sh"
+fi
+
