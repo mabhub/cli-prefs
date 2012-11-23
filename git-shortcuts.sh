@@ -18,3 +18,14 @@ function goops {
   git commit --amend
   gs
 }
+
+function ghelp {
+  echo '
+    gs    git status
+    gaa   git add -A
+    ga    git add
+    gdiff git diff --color-words
+    glog  git log --graph --oneline --all --decorate
+    gc    git commit && git status
+    goops git commit --amend && git status'
+}
