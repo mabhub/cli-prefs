@@ -1,7 +1,9 @@
 alias gs='git status'
 alias gaa='git add -A'
 alias ga='git add'
-alias gdiff='git diff --color-words'
+alias go='git checkout'
+alais gd='git diff'
+alias gdw='git diff --color-words'
 alias glog='git log --graph --oneline --all --decorate'
 alias glogo='glog `git reflog | cut -c1-7`'
 
