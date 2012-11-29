@@ -1,15 +1,23 @@
 alias gs='git status'
+
 alias gaa='git add -A'
 alias ga='git add'
+
 alias go='git checkout'
-alais gd='git diff'
+
+alias gd='git diff'
 alias gdw='git diff --color-words'
+
+alias gl='git log --graph --decorate --all'
 alias glog='git log --graph --oneline --all --decorate'
 alias glogo='glog `git reflog | cut -c1-7`'
 
-alias gup='git pull --rebase'
-alias gupp='gup && git push'
+alias gp='git push'
 alias gpu='git pull'
+alias gup='git pull --rebase'
+alias gupp='gup && gp'
+
+alias gru='git remote update'
 
 function gc {
   git commit
