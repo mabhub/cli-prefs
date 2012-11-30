@@ -159,7 +159,7 @@ switch-encoding () {
   fi
 }
 
-if [ -f "$HOME/.cli-prefs/git-shortcuts.sh" ]; then
-  . "$HOME/.cli-prefs/git-shortcuts.sh"
+if [ -f "$HOME/cli-prefs/git-shortcuts.sh" ]; then
+  . "$HOME/cli-prefs/git-shortcuts.sh"
 fi
 
