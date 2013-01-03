@@ -12,30 +12,40 @@ alias gl='git log --graph --decorate --all'
 alias glog='git log --graph --oneline --all --decorate'
 alias glogo='glog `git reflog | cut -c1-7`'
 
-alias gp='git push'
-alias gpu='git pull'
-alias gup='git pull --rebase'
-alias gupp='gup && gp'
+alias gpu='git push'
+alias gpm='git pull'
+alias gpr='git pull --rebase'
+alias gprgp='gpr && gpu'
 
 alias gru='git remote update'
 
-function gc {
-  git commit
-  gs
-}
-
-function goops {
-  git commit --amend
-  gs
-}
+alias gc='git commit'
+alias goops='gc --amend'
 
 function ghelp {
   echo '
-    gs    git status
-    gaa   git add -A
-    ga    git add
-    gdiff git diff --color-words
-    glog  git log --graph --oneline --all --decorate
-    gc    git commit && git status
-    goops git commit --amend && git status'
+    gs        git status
+
+    gaa       git add -A
+    ga        git add
+
+    go        git checkout
+
+    gd        git diff
+    gdw       git diff --color-words
+
+    gl        git log --graph --all --decorate
+    glog      git log --graph --all --decorate --oneline
+    glogo     git log --graph --all --decorate --oneline `git reflog | cut -c1-7`
+
+    gpu       git push
+    gpm       git pull
+    gpr       git pull --rebase
+    gprgp     gpr && gpu
+
+    gru       git remote update
+
+    gc        git commit && git status
+    goops     git commit --amend && git status'
 }
+
