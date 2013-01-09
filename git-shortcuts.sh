@@ -1,4 +1,5 @@
 alias gs='git status'
+alias ts='tig status'
 
 alias gaa='git add -A'
 alias ga='git add'
