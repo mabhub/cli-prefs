@@ -14,6 +14,8 @@ alias glog='git log --graph --oneline --all --decorate'
 alias glogo='glog `git reflog | cut -c1-7`'
 
 alias gpu='git push'
+alias gp='git pull --ff-only'
+alias gpl='git pull'
 alias gpm='git pull'
 alias gpr='git pull --rebase'
 alias gprgp='gpr && gpu'
@@ -40,7 +42,9 @@ function ghelp {
     glogo     git log --graph --all --decorate --oneline `git reflog | cut -c1-7`
 
     gpu       git push
+    gp        git pull --ff-only
     gpm       git pull
+    gpl       git pull
     gpr       git pull --rebase
     gprgp     gpr && gpu
 
