@@ -12,6 +12,7 @@ alias gdw='git diff --color-words'
 alias gl='git log --graph --decorate --all'
 alias glog='git log --graph --oneline --all --decorate'
 alias glogo='glog `git reflog | cut -c1-7`'
+alias glago="git log --graph --all --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset'"
 
 alias gpu='git push'
 alias gp='git pull --ff-only'
