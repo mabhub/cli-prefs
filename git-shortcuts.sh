@@ -26,6 +26,11 @@ alias gru='git remote update'
 alias gc='git commit'
 alias goops='gc --amend'
 
+alias gst='git stash'
+alias gstp='git stash pop'
+
+alias gstpr='gst && gpr && gstp'
+
 function ghelp {
   echo '
     gs        git status
@@ -41,6 +46,7 @@ function ghelp {
     gl        git log --graph --all --decorate
     glog      git log --graph --all --decorate --oneline
     glogo     git log --graph --all --decorate --oneline `git reflog | cut -c1-7`
+    glago     git log --graph --all --decorate --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset"
 
     gpu       git push
     gp        git pull --ff-only
@@ -52,6 +58,12 @@ function ghelp {
     gru       git remote update
 
     gc        git commit && git status
-    goops     git commit --amend && git status'
+    goops     git commit --amend && git status
+
+    gst       git stash
+    gstp      git stash pop
+
+    gstpr     git stash && git pull --rebase && git stash pop
+  '
 }
 
