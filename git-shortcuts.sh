@@ -23,6 +23,9 @@ alias gprgp='gpr && gpu'
 
 alias gru='git remote update'
 
+alias grh='git reset HEAD'
+alias grH='git reset --hard HEAD'
+
 alias gc='git commit'
 alias goops='gc --amend'
 
@@ -61,6 +64,9 @@ function ghelp {
     gprgp     gpr && gpu
 
     gru       git remote update
+
+    grh       git reset HEAD
+    grH       git rset --hard HEAD
 
     gc        git commit && git status
     goops     git commit --amend && git status
