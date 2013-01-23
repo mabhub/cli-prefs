@@ -31,6 +31,7 @@ alias gstp='git stash pop'
 
 alias gstpr='gst && gpr && gstp'
 
+# Désactivé car provoque des erreurs avec Cygwin :
 # From https://coderwall.com/p/ok-iyg
 # alias gprev='checkout HEAD^1'
 # alias gnext="!sh -c 'git log --reverse --pretty=%H master | awk \"/$(git rev-parse HEAD)/{getline;print}\" | xargs git checkout'"
