@@ -3,6 +3,7 @@ alias ts='tig status'
 
 alias gaa='git add -A'
 alias ga='git add'
+alias gap='git add -p'
 
 alias go='git checkout'
 
