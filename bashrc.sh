@@ -87,8 +87,6 @@ if type -P vim >/dev/null; then
 fi
 
 
-export PAGER=most
-
 # prompt
 
 function truncate_pwd {
