@@ -90,7 +90,7 @@ fi
 # prompt
 
 function truncate_pwd {
- if [ $HOME == $PWD ]
+ if [ "$HOME" == "$PWD" ]
  then
    newPWD="~"
  elif [ $HOME ==  ${PWD:0:${#HOME}} ]
