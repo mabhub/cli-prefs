@@ -24,6 +24,10 @@ alias gprgp='gpr && gpu'
 
 alias gru='git remote update'
 
+alias gb='git branch'
+alias gm='git merge'
+alias gr='git rebase'
+
 alias grh='git reset HEAD'
 alias grH='git reset --hard HEAD'
 
@@ -32,8 +36,12 @@ alias goops='gc --amend'
 
 alias gst='git stash'
 alias gstp='git stash pop'
+alias gstl='git stash list'
+
 
 alias gstpr='gst && gpr && gstp'
+alias grl='gru && gl'
+
 
 # Désactivé car provoque des erreurs avec Cygwin :
 # From https://coderwall.com/p/ok-iyg
