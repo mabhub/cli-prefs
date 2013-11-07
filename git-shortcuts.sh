@@ -42,6 +42,7 @@ alias gstl='git stash list'
 alias gstpr='gst && gpr && gstp'
 alias grl='gru && gl'
 
+alias gf='git diff --numstat'
 
 # Désactivé car provoque des erreurs avec Cygwin :
 # From https://coderwall.com/p/ok-iyg
