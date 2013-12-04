@@ -50,41 +50,52 @@ alias gf='git diff --numstat'
 # alias gnext="!sh -c 'git log --reverse --pretty=%H master | awk \"/$(git rev-parse HEAD)/{getline;print}\" | xargs git checkout'"
 
 function ghelp {
-  echo '
+  cat << EOF
     gs        git status
+    ts        tig status
 
     gaa       git add -A
     ga        git add
+    gap       git add -p
 
     go        git checkout
 
     gd        git diff
     gdw       git diff --color-words
 
-    gl        git log --graph --all --decorate
-    glog      git log --graph --all --decorate --oneline
-    glogo     git log --graph --all --decorate --oneline `git reflog | cut -c1-7`
-    glago     git log --graph --all --decorate --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset"
+    gl        git log --graph --decorate --all
+    glog      git log --graph --oneline --all --decorate
+    glogo     glog \`git reflog | cut -c1-7\`
+    glago     git log --graph --all --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset'
 
     gpu       git push
     gp        git pull --ff-only
-    gpm       git pull
     gpl       git pull
+    gpm       git pull
     gpr       git pull --rebase
     gprgp     gpr && gpu
 
     gru       git remote update
 
-    grh       git reset HEAD
-    grH       git rset --hard HEAD
+    gb        git branch
+    gm        git merge
+    gr        git rebase
 
-    gc        git commit && git status
-    goops     git commit --amend && git status
+    grh       git reset HEAD
+    grH       git reset --hard HEAD
+
+    gc        git commit
+    goops     gc --amend
 
     gst       git stash
     gstp      git stash pop
+    gstl      git stash list
 
-    gstpr     git stash && git pull --rebase && git stash pop
-  '
+
+    gstpr     gst && gpr && gstp
+    grl       gru && gl
+
+    gf        git diff --numstat
+EOF
 }
 
